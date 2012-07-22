@@ -46,5 +46,6 @@ class EdifyGenerator(edify_generator.EdifyGenerator):
 
       self.script.append(
             ('assert(package_extract_file("%(image)s", "/tmp/%(image)s"),\n'
-             '       write_raw_image("/tmp/%(image)s", "%(partition)s"),\n'
+             '       package_extract_file("flash_image", "/tmp/flash_image"),\n'
+             '       run_program("/tmp/flash_image boot %(image)s"),\n'
              '       delete("/tmp/%(image)s"));') % args)

@@ -43,6 +43,7 @@ def CopyUpdaterFiles(output_zip):
   """Copy some utilities needed for updater."""
   output_zip.write(os.path.join(UTILITIES_DIR, "make_ext4fs"),"make_ext4fs")
   output_zip.write(os.path.join(UTILITIES_DIR, "busybox"),"busybox")
+  output_zip.write(os.path.join(UTILITIES_DIR, "flash_image"),"flash_image")
   output_zip.write(os.path.join(LOCAL_DIR, "updater.sh"),"updater.sh")
 
 def WriteFullOTAPackage(input_zip, output_zip):
