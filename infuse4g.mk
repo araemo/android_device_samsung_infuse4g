@@ -151,6 +151,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES := \
 	ro.opengles.version=131072
 
+# Override aries-common
+# Aries shrunk /data and cache for 'performance' reasons.  Performance issue does not exist on infuse
+# so we still have full size /data and /cache
+PRODUCT_PROPERTY_OVERRIDES += \
+        dalvik.vm.dexopt-data-only=0
+
 # These are the hardware-specific settings that are stored in system properties.
 # Note that the only such settings should be the ones that are too low-level to
 # be reachable from resources or other mechanisms.
@@ -198,7 +204,7 @@ include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_COPY_FILES += \
-    device/samsung/aries-common/updater.sh:updater.sh
+    device/samsung/infuse4g/updater.sh:updater.sh
 
 # See comment at the top of this file. This is where the other
 # half of the device-specific product definition file takes care
