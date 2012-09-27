@@ -108,6 +108,7 @@ PRODUCT_PACKAGES += \
 # Libs
 PRODUCT_PACKAGES += \
 	hwcomposer.s5pc110 \
+	power.s5pc110 \
 	libstagefrighthw
 
 # Camera
