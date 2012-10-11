@@ -197,6 +197,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dexopt-data-only=1
 
+# Set some agps settings..
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.ril.def.agps.mode=2
+
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mass_storage
