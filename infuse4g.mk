@@ -44,8 +44,7 @@ DEVICE_PACKAGE_OVERLAYS := device/samsung/infuse4g/overlay
 PRODUCT_COPY_FILES := \
 	device/samsung/infuse4g/prebuilt/etc/vold.fstab:system/etc/vold.fstab \
 	device/samsung/infuse4g/prebuilt/lib/egl/egl.cfg:system/lib/egl/egl.cfg \
-	device/samsung/infuse4g/prebuilt/usr/idc/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc \
-	device/samsung/aries-common/main.conf:system/etc/bluetooth/main.conf
+	device/samsung/infuse4g/prebuilt/usr/idc/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc
 
 # Init files
 PRODUCT_COPY_FILES += \
@@ -166,7 +165,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
        wifi.interface=wlan0 \
        wifi.supplicant_scan_interval=20 \
-       ro.telephony.ril_class=SamsungRIL \
+       ro.telephony.ril_class=SamsungExynos3RIL \
        ro.telephony.ril.v3=icccardstatus,datacall,signalstrength,facilitylock \
        mobiledata.interfaces=pdp0,wlan0,gprs,ppp0 \
        persist.sys.vold.switchexternal=1
