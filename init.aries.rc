@@ -293,19 +293,19 @@ on post-fs
       chmod 770 /data/GPS_UTC_Calib.bin
       chown system system /dev/cg2900_audio
       chmod 0770 /dev/cg2900_audio
-	  chown system system /dev/cg2900_bt_audio
+      chown system system /dev/cg2900_bt_audio
       chmod 0770 /dev/cg2900_bt_audio
       chown system system /dev/cg2900_core
       chmod 0770 /dev/cg2900_core	  
       chown system system /dev/cg2900_driver0
       chmod 0770 /dev/cg2900_driver0
-	  chown system system /dev/cg2900_fm_audio
+      chown system system /dev/cg2900_fm_audio
       chmod 0770 /dev/cg2900_fm_audio
-      chown system system /dev/cg2900_gnss
+      chown gps system /dev/cg2900_gnss
       chmod 0770 /dev/cg2900_gnss
       chown system system /dev/cg2900_hci_logger
       chmod 0770 /dev/cg2900_hci_logger	  
-	  chown system system /dev/cg2900_us_ctrl
+      chown system system /dev/cg2900_us_ctrl
       chmod 0770 /dev/cg2900_us_ctrl
 
 on post-fs-data
@@ -392,19 +392,6 @@ service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 \
     disabled
     oneshot
 
-#service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm --no2bytes --tosleep 50000 \
-	#--baudrate 3000000 --use_baudrate_for_download --patchram /system/bin/BCM4330B1_002.001.003.0043.0061.hcd \
-	#--scopcm=0,0,0,0,0,0,0,3,3,0 /dev/s3c2410_serial0
-    #class main
-    #user bluetooth
-    #group bluetooth net_bt_admin
-    #disabled
-    #oneshot
-
-#service tvout /system/bin/tvoutserver
-#    user system
-#    group graphics
-
 # +STE UART Contol Application
 service ste-cg29xx_ctrl /system/vendor/bin/ste-cg29xx_ctrl -b 115200 /dev/s3c2410_serial1
      class main
@@ -416,7 +403,7 @@ service ste-cg29xx_ctrl /system/vendor/bin/ste-cg29xx_ctrl -b 115200 /dev/s3c241
 #GPS_CHIPSET_STE_CG2900
 service agpsd /system/vendor/bin/agpsd
      class core
-     user root
+     user gps
      group system inet
      oneshot
 
